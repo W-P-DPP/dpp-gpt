@@ -8,8 +8,8 @@ export function init() {
         msglist: [],
         inputHistort: [],
         axiosInstance: axios.create({
-          baseURL: "http://127.0.0.1:5067",
-          // baseURL: "http://106.14.121.85:5067",
+          // baseURL: "http://127.0.0.1:5067",
+          baseURL: "http://106.14.121.85:5067",
           //   timeout: 6000,
           headers: { "Content-Type": "application/json" },
         }),

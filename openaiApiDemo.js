@@ -4,13 +4,13 @@ const { Configuration, OpenAIApi } = require("openai");
 const axios = require("axios");
 
 const configuration = new Configuration({
-  apiKey: "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",
+  apiKey: "YOUR_OPENAI_KEY",
 });
 
 const HttpsProxyAgent = require("https-proxy-agent");
 const proxyUrl = "http://127.0.0.1:10809";
 const agent = new HttpsProxyAgent.HttpsProxyAgent(proxyUrl);
-const apiKey = "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"; // 将YOUR_API_KEY替换为您的OpenAI API密钥
+const apiKey = "YOUR_OPENAI_KEY"; // 将YOUR_API_KEY替换为您的OpenAI API密钥
 
 const axiosInstance = axios.create({
   httpsAgent: agent,
