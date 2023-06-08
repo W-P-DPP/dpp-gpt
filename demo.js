@@ -10,7 +10,7 @@ const agent = new HttpsProxyAgent.HttpsProxyAgent(proxyUrl);
 // const sockProxyUrl = "socks5://127.0.0.1:10808";
 // const sockProxy = new SocksProxyAgent.SocksProxyAgent(sockProxyUrl);
 
-const apiKey = "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"; // 将YOUR_API_KEY替换为您的OpenAI API密钥
+const apiKey = "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"; // 将YOUR_API_KEY替换为您的OpenAI API密钥
 const apiUrl = "https://api.openai.com/v1/chat/completions";
 
 const axiosInstance = axios.create({

@@ -11,6 +11,7 @@ app.use(express.static("gpt-web"));
 
 let inputHistort = [];
 app.get("/gpt", async (req, res) => {
+  console.log(req.query.content);
   inputHistort.push(req.query.content);
   try {
     // const msg = await callOpenAPI(req.query.content);
