@@ -10,7 +10,7 @@ const SocksProxyAgent = require("socks-proxy-agent");
 const sockProxyUrl = "socks5://127.0.0.1:10808";
 const sockProxy = new SocksProxyAgent.SocksProxyAgent(sockProxyUrl);
 
-const apiKey = "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"; // 将YOUR_API_KEY替换为您的OpenAI API密钥
+const apiKey = "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"; // 将YOUR_API_KEY替换为您的OpenAI API密钥
 const axiosInstance = axios.create({
   //   httpsAgent: agent,
   httpsAgent: sockProxy,
@@ -21,11 +21,12 @@ const axiosInstance = axios.create({
 });
 
 const configuration = new Configuration({
-  apiKey: "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",
+  apiKey: "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",
 });
 const openai = new OpenAIApi(configuration, undefined, axiosInstance);
 
 module.exports = async function getOpenai(inputHistort) {
+  console.log(inputHistort);
   try {
     const completion = await openai.createChatCompletion({
       model: "gpt-3.5-turbo",

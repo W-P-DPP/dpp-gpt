@@ -13,12 +13,12 @@ export function init() {
           //   timeout: 6000,
           headers: { "Content-Type": "application/json" },
         }),
-        container: document.querySelector(".container"),
       };
     },
     methods: {
       async sendMsg() {
         if (!this.input) return;
+        const container = document.querySelector(".container");
         this.inputHistort.push(this.input);
         this.msglist.push({ to: "right", msg: this.input, role: "user" });
         this.input = "";
@@ -28,12 +28,12 @@ export function init() {
             content,
           };
         });
-        const res = await this.axiosInstance.get("/gpt", { params: { content: JSON.stringify(inputHistort) } });
+        const res = await this.axiosInstance.post("/gpt", { content: JSON.stringify(inputHistort) });
         if (res.status !== 200) return;
         // console.log(res);
         this.msglist.push({ to: "left", msg: res.data.content, role: "assistant" });
         this.$nextTick(() => {
-          this.container.scrollTop = this.container.scrollHeight;
+          container.scrollTop = container.scrollHeight;
         });
       },
     },
